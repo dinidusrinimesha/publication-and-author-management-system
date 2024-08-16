@@ -79,6 +79,7 @@
                                 <div class="row">
                                     <a href="{{ route('publication.view', $publication->id) }}" class="btn btn-primary">View</a>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>                  

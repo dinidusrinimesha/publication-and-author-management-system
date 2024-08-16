@@ -11,7 +11,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware
+            ->append(\App\Http\Middleware\CheckAdminUserRole::class)
+            ->append(\App\Http\Middleware\CheckAuthorUserRole::class)
+            ->append(\App\Http\Middleware\CheckReaderUserRole::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
